@@ -1,0 +1,138 @@
+antecedents,consequents,confidence
+"Bengaluru, Yerevan",Dhaka,0.9
+"Hong Kong, Barcelona",Karachi,0.894736842105263
+"Colombo, Beirut",Dhaka,0.894736842105263
+"Manila, Bangkok",Dubai,0.8636363636363636
+"Kolkata, Sialkot",Colombo,0.85
+"Chennai, Singapore",Abu Dhabi,0.85
+"Colombo, Karachi",Dhaka,0.8333333333333334
+"Chennai, Bengaluru",Dhaka,0.8260869565217391
+"Dhaka, Hyderabad",Karachi,0.8214285714285714
+"Sialkot, Dhaka",Colombo,0.8181818181818181
+"Peshawar, Hyderabad",Bengaluru,0.8181818181818181
+"Peshawar, Hyderabad",Jakarta,0.8181818181818181
+"Dar es Salaam, Dhaka",Karachi,0.8095238095238094
+"Bangkok, Bengaluru",Karachi,0.8095238095238094
+"Mumbai, New Delhi",Kolkata,0.8095238095238094
+"Dar es Salaam, Bangkok",Karachi,0.8095238095238094
+"Sao Paulo, Dhaka",Karachi,0.7916666666666667
+"Chennai, Bengaluru",Multan,0.7826086956521738
+"Kuwait City, Dhaka, Hyderabad",Karachi,0.7826086956521738
+"Islamabad, Hyderabad",Colombo,0.7826086956521738
+"Peshawar, Bengaluru",Jakarta,0.7777777777777778
+"Jakarta, Peshawar",Bengaluru,0.7777777777777778
+"Dhaka, Multan",Colombo,0.7777777777777778
+"Mumbai, Hyderabad",Jakarta,0.7727272727272726
+"Istanbul, Kuala Lumpur",Abu Dhabi,0.7727272727272726
+"Colombo, Lahore",Hyderabad,0.7727272727272726
+"Kolkata, Islamabad",Mumbai,0.7727272727272726
+"Kolkata, Islamabad",Colombo,0.7727272727272726
+"Peshawar, Barcelona",Chennai,0.7727272727272726
+"Adelaide, Islamabad",Dubai,0.7727272727272726
+"Mumbai, Hyderabad",Barcelona,0.7727272727272726
+"Washington DC, Abu Dhabi",Muscat,0.7727272727272726
+"Kuala Lumpur, Hyderabad",Dhaka,0.7727272727272726
+"Hyderabad, Shanghai",Bengaluru,0.7727272727272726
+"Colombo, Istanbul",Multan,0.7727272727272726
+"Adelaide, Islamabad",Colombo,0.7727272727272726
+"Peshawar, Dhaka",Bengaluru,0.7692307692307692
+"Karachi, Hyderabad",Dhaka,0.7666666666666667
+"Chennai, Dhaka",Bengaluru,0.76
+"Colombo, Bengaluru",Dhaka,0.76
+"Bangkok, Dhaka",Karachi,0.76
+"Sao Paulo, Muscat",Riyadh,0.75
+"Colombo, Peshawar",Jakarta,0.75
+"Colombo, Peshawar",Seoul,0.75
+"Colombo, Sharjah",Jeddah,0.75
+"Riyadh, Sao Paulo",Muscat,0.75
+"Manama, Bangkok",Muscat,0.75
+"Adelaide, Abu Dhabi",Dubai,0.75
+"Colombo, Hyderabad",Dhaka,0.7407407407407407
+"Bengaluru, Dhaka",Peshawar,0.7407407407407407
+"Jakarta, Hyderabad",Bengaluru,0.7407407407407407
+"Peshawar, Bengaluru",Dhaka,0.7407407407407407
+"Kolkata, Mumbai",Islamabad,0.7391304347826085
+"Beirut, Abu Dhabi",Dhaka,0.7391304347826085
+"Adelaide, Muscat",Abu Dhabi,0.7391304347826085
+"Milan, Dhaka",Karachi,0.7391304347826085
+"Kuala Lumpur, Multan",Abu Dhabi,0.7391304347826085
+"Kolkata, Mumbai",New Delhi,0.7391304347826085
+"Dar es Salaam, Bengaluru",Jakarta,0.7391304347826085
+"Cairo, Bangkok",Karachi,0.7391304347826085
+"Athens, Colombo",Islamabad,0.7391304347826085
+"Chennai, Bengaluru",Karachi,0.7391304347826085
+"Bengaluru, Shanghai",Hyderabad,0.7391304347826085
+"Karachi, Yerevan",Dhaka,0.7391304347826085
+"Kolkata, Hyderabad",Colombo,0.7391304347826085
+"Islamabad, Hyderabad",Bengaluru,0.7391304347826085
+"Hyderabad, Barcelona",Mumbai,0.7391304347826085
+"Chennai, Barcelona",Peshawar,0.7391304347826085
+"Chennai, Peshawar",Barcelona,0.7391304347826085
+"Karachi, Basra",Dhaka,0.7391304347826085
+"Athens, Dhaka",Colombo,0.7391304347826085
+"Athens, Colombo",Dhaka,0.7391304347826085
+"Perth, Muscat",Abu Dhabi,0.7391304347826085
+"Kolkata, Mumbai",Dhaka,0.7391304347826085
+"Kolkata, Peshawar",Jakarta,0.7307692307692308
+"Chennai, Muscat",Abu Dhabi,0.72
+"Colombo, Bengaluru",Hyderabad,0.72
+"Bengaluru, Multan",Chennai,0.72
+"Islamabad, Mumbai",Peshawar,0.72
+"Kuwait City, Hyderabad, Karachi",Dhaka,0.72
+"Mumbai, Dhaka",Peshawar,0.72
+"Chennai, Dhaka",Colombo,0.72
+"Chennai, Dhaka",Multan,0.72
+"Jakarta, New Delhi",Kolkata,0.72
+"Colombo, Sialkot",Dhaka,0.72
+"Colombo, New Delhi",Riyadh,0.72
+"Hyderabad, Multan",Dhaka,0.72
+"Dubai, Shanghai",Muscat,0.72
+"Dhaka, Hyderabad",Colombo,0.7142857142857142
+"Bengaluru, Hyderabad",Karachi,0.7142857142857142
+"Chennai, Multan",Colombo,0.7142857142857142
+"Bengaluru, Hyderabad",Jakarta,0.7142857142857142
+"Beirut, Dhaka",Abu Dhabi,0.7083333333333334
+"Adelaide, Abu Dhabi",Muscat,0.7083333333333334
+"Amman, Bengaluru",Hyderabad,0.7083333333333334
+"Amman, Hyderabad",Bengaluru,0.7083333333333334
+"Colombo, Adelaide",Islamabad,0.7083333333333334
+"Beirut, Dhaka",Colombo,0.7083333333333334
+"Athens, Islamabad",Colombo,0.7083333333333334
+"Colombo, Karachi",Bengaluru,0.7083333333333334
+"Colombo, Basra",Dhaka,0.7083333333333334
+"Dar es Salaam, Jakarta",Bengaluru,0.7083333333333334
+"Kolkata, Bengaluru",Colombo,0.7083333333333334
+"Kolkata, Bengaluru",Jakarta,0.7083333333333334
+"Karachi, Peshawar",Bengaluru,0.7083333333333334
+"Multan, New Delhi",Riyadh,0.7083333333333334
+"Jakarta, Mumbai",Hyderabad,0.7083333333333334
+"Colombo, Peshawar",Dhaka,0.7083333333333334
+"Riyadh, Paris",Jeddah,0.7083333333333334
+"Karachi, Peshawar",Dhaka,0.7083333333333334
+"Colombo, Karachi",Multan,0.7083333333333334
+"Colombo, Manchester",Multan,0.7083333333333334
+"Istanbul, Dhaka",Multan,0.7083333333333334
+"Colombo, Peshawar",Bengaluru,0.7083333333333334
+"Bangkok, Hyderabad",Karachi,0.7037037037037037
+"Kolkata, Jakarta",Peshawar,0.7037037037037037
+"Karachi, Sao Paulo",Dhaka,0.7037037037037037
+"Islamabad, Dhaka",Colombo,0.7037037037037037
+"Bengaluru, Dhaka",Chennai,0.7037037037037037
+"Bengaluru, Dhaka",Colombo,0.7037037037037037
+"Bengaluru, Dhaka",Karachi,0.7037037037037037
+"Jakarta, Peshawar",Kolkata,0.7037037037037037
+"Jakarta, Bengaluru",Peshawar,0.7000000000000001
+"Colombo, Multan",Dhaka,0.7000000000000001
+"Karachi, Barcelona",Dhaka,0.6923076923076923
+"Yerevan, Dhaka",Bengaluru,0.6923076923076923
+"Muscat, Singapore",Abu Dhabi,0.6923076923076923
+"Dhaka, Barcelona",Karachi,0.6923076923076923
+"Colombo, Jakarta",Peshawar,0.6923076923076923
+"Peshawar, Seoul",Colombo,0.6923076923076923
+"Hong Kong, Dhaka",Karachi,0.6923076923076923
+"Karachi, Multan",Dhaka,0.6923076923076923
+"Peshawar, Dhaka",Mumbai,0.6923076923076923
+"Peshawar, Mumbai",Dhaka,0.6923076923076923
+"Peshawar, Mumbai",Islamabad,0.6923076923076923
+"Karachi, Multan",Seoul,0.6923076923076923
+"New Delhi, Shanghai",Riyadh,0.6923076923076923
