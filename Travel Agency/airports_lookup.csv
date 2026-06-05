@@ -1,0 +1,83 @@
+airport_code,city,region
+LHE,Lahore,Subcontinent
+KHI,Karachi,Subcontinent
+ISB,Islamabad,Subcontinent
+DEL,New Delhi,Subcontinent
+BOM,Mumbai,Subcontinent
+CCU,Kolkata,Subcontinent
+DAC,Dhaka,Subcontinent
+CMB,Colombo,Subcontinent
+BLR,Bengaluru,Subcontinent
+HYD,Hyderabad,Subcontinent
+MAA,Chennai,Subcontinent
+PEW,Peshawar,Subcontinent
+MUX,Multan,Subcontinent
+SKT,Sialkot,Subcontinent
+KWI,Kuwait City,GCC
+DXB,Dubai,GCC
+AUH,Abu Dhabi,GCC
+DOH,Doha,GCC
+RUH,Riyadh,GCC
+JED,Jeddah,GCC
+BAH,Manama,GCC
+MCT,Muscat,GCC
+DMM,Dammam,GCC
+SHJ,Sharjah,GCC
+MED,Medina,GCC
+AMM,Amman,MiddleEast
+BEY,Beirut,MiddleEast
+BGW,Baghdad,MiddleEast
+TLV,Tel Aviv,MiddleEast
+CAI,Cairo,MiddleEast
+SSH,Sharm El Sheikh,MiddleEast
+HRG,Hurghada,MiddleEast
+TBS,Tbilisi,MiddleEast
+EVN,Yerevan,MiddleEast
+BSR,Basra,MiddleEast
+NJF,Najaf,MiddleEast
+LHR,London,Europe
+CDG,Paris,Europe
+FRA,Frankfurt,Europe
+IST,Istanbul,Europe
+SAW,Istanbul-SAW,Europe
+FCO,Rome,Europe
+BCN,Barcelona,Europe
+MAD,Madrid,Europe
+MAN,Manchester,Europe
+MXP,Milan,Europe
+ZRH,Zurich,Europe
+VIE,Vienna,Europe
+ATH,Athens,Europe
+AMS,Amsterdam,Europe
+BKK,Bangkok,SoutheastAsia
+KUL,Kuala Lumpur,SoutheastAsia
+SIN,Singapore,SoutheastAsia
+CGK,Jakarta,SoutheastAsia
+MNL,Manila,SoutheastAsia
+HAN,Hanoi,SoutheastAsia
+SGN,Ho Chi Minh,SoutheastAsia
+PEK,Beijing,EastAsia
+PVG,Shanghai,EastAsia
+HKG,Hong Kong,EastAsia
+NRT,Tokyo,EastAsia
+ICN,Seoul,EastAsia
+TPE,Taipei,EastAsia
+NBO,Nairobi,Africa
+ADD,Addis Ababa,Africa
+JNB,Johannesburg,Africa
+DAR,Dar es Salaam,Africa
+KRT,Khartoum,Africa
+ALG,Algiers,Africa
+CMN,Casablanca,Africa
+LOS,Lagos,Africa
+JFK,New York,Americas
+IAD,Washington DC,Americas
+ORD,Chicago,Americas
+LAX,Los Angeles,Americas
+YYZ,Toronto,Americas
+GRU,Sao Paulo,Americas
+SYD,Sydney,Australia
+MEL,Melbourne,Australia
+BNE,Brisbane,Australia
+PER,Perth,Australia
+ADL,Adelaide,Australia

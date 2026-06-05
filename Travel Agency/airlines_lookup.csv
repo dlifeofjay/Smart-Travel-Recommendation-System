@@ -1,0 +1,57 @@
+airline_code,airline_name,home_region
+KU,Kuwait Airways,GCC
+EK,Emirates,GCC
+QR,Qatar Airways,GCC
+EY,Etihad Airways,GCC
+WY,Oman Air,GCC
+GF,Gulf Air,GCC
+SV,Saudia,GCC
+G9,Air Arabia Abu Dhabi,GCC
+FZ,Flydubai,GCC
+XY,flynas,GCC
+PK,PIA,Subcontinent
+AI,Air India,Subcontinent
+6E,IndiGo,Subcontinent
+UK,Vistara,Subcontinent
+BG,Biman Bangladesh,Subcontinent
+UL,SriLankan Airlines,Subcontinent
+SG,SpiceJet,Subcontinent
+RJ,Royal Jordanian,MiddleEast
+ME,Middle East Airlines,MiddleEast
+MS,EgyptAir,MiddleEast
+IA,Iraqi Airways,MiddleEast
+PC,Pegasus Airlines,MiddleEast
+BA,British Airways,Europe
+AF,Air France,Europe
+LH,Lufthansa,Europe
+TK,Turkish Airlines,Europe
+IB,Iberia,Europe
+AZ,ITA Airways,Europe
+KL,KLM,Europe
+LX,Swiss,Europe
+OS,Austrian,Europe
+FR,Ryanair,Europe
+W6,Wizz Air,Europe
+TG,Thai Airways,SoutheastAsia
+MH,Malaysia Airlines,SoutheastAsia
+SQ,Singapore Airlines,SoutheastAsia
+GA,Garuda Indonesia,SoutheastAsia
+PR,Philippine Airlines,SoutheastAsia
+VN,Vietnam Airlines,SoutheastAsia
+AK,AirAsia,SoutheastAsia
+CX,Cathay Pacific,EastAsia
+CA,Air China,EastAsia
+MU,China Eastern,EastAsia
+KE,Korean Air,EastAsia
+NH,ANA,EastAsia
+BR,EVA Air,EastAsia
+ET,Ethiopian Airlines,Africa
+KQ,Kenya Airways,Africa
+SA,South African Airways,Africa
+AA,American Airlines,Americas
+UA,United Airlines,Americas
+DL,Delta Air Lines,Americas
+AC,Air Canada,Americas
+QF,Qantas,Australia
+JQ,Jetstar,Australia
+VA,Virgin Australia,Australia
