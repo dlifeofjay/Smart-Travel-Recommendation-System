@@ -25,25 +25,27 @@ Smart Travel Recommendation System/
 ├─ Notebooks/                # Jupyter notebooks for model development
 │   ├─ Apriori Algorithm.ipynb        # Association rule mining exploration
 │   └─ Travel Period Prediction.ipynb # Season prediction model training
+├─ SQL & Database/           # Database and query files
+│   ├─ SQLQuery1.sql         # SQL queries for data extraction from MSSQL database
+│   └─ TRAVEL_ACTIVITIES.bak # SQL Server database backup file
 ├─ src/                      # Core pipeline modules
 │   ├─ main.py               # Pipeline orchestrator
 │   ├─ dummy_users.py        # Aggregates booking data by customer ID
 │   ├─ predictor.py          # Season prediction on customer profiles
 │   ├─ association.py        # Apriori algorithm for mining association rules
 │   └─ recommendation_engine.py # Matches customers to rules & generates recommendations
-├─ Travel Agency/            # Data files (input & output)
-│   ├─ cleaned_data.csv      # Input: cleaned booking records
-│   ├─ season_destination_lookup.csv # Seasonal destination reference
-│   ├─ airlines_lookup.csv
-│   ├─ airports_lookup.csv
-│   ├─ passengers.csv
-│   ├─ bookings.csv
-│   ├─ payments.csv
-│   ├─ segments.csv
-│   ├─ recommendations.json  # Output: customer-to-destination recommendations
-│   ├─ predict.npy           # Predicted season labels (for model evaluation)
-│   └─ true.npy              # True season labels (for model evaluation)
-└─ SQLQuery1.sql             # SQL queries for data extraction
+└─ Travel Agency/            # Data files (input & output)
+    ├─ cleaned_data.csv      # Input: cleaned booking records
+    ├─ season_destination_lookup.csv # Seasonal destination reference
+    ├─ airlines_lookup.csv
+    ├─ airports_lookup.csv
+    ├─ passengers.csv
+    ├─ bookings.csv
+    ├─ payments.csv
+    ├─ segments.csv
+    ├─ recommendations.json  # Output: customer-to-destination recommendations
+    ├─ predict.npy           # Predicted season labels (for model evaluation)
+    └─ true.npy              # True season labels (for model evaluation)
 ```
 
 ---
@@ -65,8 +67,35 @@ Smart Travel Recommendation System/
    ```
    If a `requirements.txt` is not present, install the core dependencies manually:
    ```
-   pip install pandas numpy scikit-learn joblib streamlit mlxtend
+   pip install pandas numpy scikit-learn joblib streamlit mlxtend sqlalchemy pyodbc
    ```
+
+---
+
+## Database Setup
+
+To run the pipeline with live database data:
+
+1. **SQL Server Installation** (if not already installed)
+   - Install SQL Server Express or Developer Edition
+   - Install SQL Server Management Studio (SSMS)
+
+2. **Restore Database Backup**
+   - Open SQL Server Management Studio
+   - Right-click **Databases** → **Restore Database**
+   - Select device and navigate to `SQL & Database/TRAVEL_ACTIVITIES.bak`
+   - Complete the restoration
+
+3. **Verify Connection**
+   - Update the connection string in the notebook if needed:
+   ```python
+   server = 'DESKTOP-74CHGLL\SQLEXPRESS'  # Change to your server name
+   database = 'TRAVEL_ACTIVITIES'
+   ```
+
+4. **Run Data Pipeline**
+   - Execute notebook: `Notebooks/Travel Period Prediction.ipynb`
+   - This will extract data from the database, preprocess, and train the model
 
 ---
 

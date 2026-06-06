@@ -19,7 +19,10 @@ feature_order = ['channel', 'trip_type', 'cabin', 'airline', 'origin', 'destinat
                  'payment_day', 'dep_year', 'dep_day']
 
 def preprocess_data(df):
-    # Group by customer_id - aggregate numerical as mean, categorical as mode
+    """Group by customer_id and 
+    aggregate numerical as mean, categorical as mode
+    """
+    # initialize aggregate dict
     agg_dict = {}
     
     # Numerical columns → mean
@@ -29,7 +32,7 @@ def preprocess_data(df):
     for col in num_cols:
         agg_dict[col] = 'mean'
     
-    # Categorical columns → mode (most frequent value)
+    # Categorical columns → mode
     cat_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
     if 'season' in cat_cols:
         cat_cols.remove('season')
@@ -50,20 +53,25 @@ def preprocess_data(df):
 
 
 def predict(df):
+    """
+    Execute preprocessing and
+    predict travel season for each customers
+    """
+    # Execute preprocessing
     X, customer_ids = preprocess_data(df)
     
-    # Preprocess with saved preprocessor
+    # Preprocess with saved preprocessor (StandarsScaler and OneHot)
     X_preprocessed = preprocessor.transform(X)
     
-    # Predict
+    # Predict season
     y_pred = model.predict(X_preprocessed)
     y_pred_labels = encoder.inverse_transform(y_pred)
     
-    # Add results
+    # Add results to dataframe
     X["predicted_season"] = y_pred_labels
     X["customer_id"] = customer_ids
     
-    # Determine current season
+    # Determine current real time season
     current_month = datetime.now().month
     if current_month in [6, 7, 8]:
         current_season = "Summer"
@@ -74,7 +82,7 @@ def predict(df):
     else:
         current_season = "Autumn"
     
-    # Filter by current season
+    # Filter by current real time season
     result = X[X["predicted_season"] == current_season].copy()
 
     print("Predictions made and saved")

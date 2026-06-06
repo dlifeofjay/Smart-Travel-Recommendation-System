@@ -1,9 +1,13 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\cleaned_data.csv")
 
 def users(df, unique_ratio=0.4):
+
+    """
+    Create dummy repeat users,
+    database doesnt have repeat users
+    """
     n_rows = len(df)
     
     # Number of unique customers
@@ -13,12 +17,14 @@ def users(df, unique_ratio=0.4):
     print(f"Total rows: {n_rows}")
     print(f"Unique customers (1 to {n_unique}): {n_unique}")
     
+    # Create random customer id
     customer_ids = np.random.choice(
         a=np.arange(1, n_unique + 1), 
         size=n_rows, 
         replace=True                   
     )
     
+    # Save result to a new column in the dataframe
     df["customer_id"] = customer_ids
 
     print("Created dummy users")
