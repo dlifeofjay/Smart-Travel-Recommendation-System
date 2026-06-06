@@ -56,7 +56,7 @@ def recommendation_system(data, rec_data):
 
     # Save dictionary as json
 
-    with open(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\recommendations.json", "w", encoding="utf-8") as f:
+    with open("Travel Agency/recommendations.json", "w", encoding="utf-8") as f:
         json.dump(recom_dict, f, indent=4)
 
     print("Dictionary made and saved")

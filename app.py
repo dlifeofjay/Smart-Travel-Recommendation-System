@@ -25,7 +25,7 @@ if page == "Recommendation System":
     st.write("System Layout: The system first predicts best time of the season a person will travel based on his behavioural and demographics features, then it uses data gathered to suggest or recommend best place he can travel based on popular market demand for that season and from the clients city")
 
     # Load recommendation data from JSON
-    with open(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\recommendations.json", "r", encoding="utf-8") as f:
+    with open("Travel Agency/recommendations.json", "r", encoding="utf-8") as f:
         recom_data = json.load(f)
 
     # Convert string keys to integers for lookup
@@ -78,8 +78,8 @@ else:
     st.subheader("Confusion Matrix")
 
     # Load prediction results
-    pred = np.load(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\predict.npy")
-    true = np.load(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\true.npy")
+    pred = np.load("Travel Agency/predict.npy")
+    true = np.load("Travel Agency/true.npy")
 
     # Plot confusion matrix
     fig, ax = plt.subplots()

@@ -46,7 +46,7 @@ def associate(df):
     print("Association rule made")
 
     # Needed columns for recommendation engine
-    rl[["antecedents", "consequents", "confidence"]].to_csv(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\Recommendation data.csv", index=False)
+    rl[["antecedents", "consequents", "confidence"]].to_csv("Travel Agency/Recommendation data.csv", index=False)
 
     return rl[["antecedents", "consequents", "confidence"]]
 

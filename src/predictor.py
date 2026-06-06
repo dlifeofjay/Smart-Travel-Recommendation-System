@@ -4,9 +4,9 @@ import numpy as np
 import joblib
 
 # Load Artifacts
-model = joblib.load(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\artifact\travel_model.pkl")
-preprocessor = joblib.load(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\artifact\feature_preprocessor.pkl")
-encoder = joblib.load(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\artifact\target_label.pkl")
+model = joblib.load("artifact/travel_model.pkl")
+preprocessor = joblib.load("artifact/feature_preprocessor.pkl")
+encoder = joblib.load("artifact/target_label.pkl")
 
 # Expected feature order
 feature_order = ['channel', 'trip_type', 'cabin', 'airline', 'origin', 'destination',
