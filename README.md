@@ -1,48 +1,49 @@
 # Smart Travel Recommendation System
 
 ## Overview
-This repository contains a **Smart Travel Recommendation System** that demonstrates how a machine‑learning pipeline can predict the optimal travel season for a client and generate destination recommendations based on association‑rule mining (Apriori algorithm). The project showcases a full end‑to‑end workflow:
+This repository contains a **Smart Travel Recommendation System** that predicts travel patterns and generates personalized destination recommendations using machine learning and association rule mining. The system demonstrates a complete end‑to‑end ML pipeline:
 
-1. **Data ingestion & preprocessing** – raw airline booking data is cleaned and augmented with synthetic user IDs.
-2. **Season prediction model** – a trained scikit‑learn model predicts the most likely travel season for each customer.
-3. **Recommendation engine** – association rules derived from historical trips suggest next‑visit destinations.
-4. **Interactive UI** – a Streamlit app (`app.py`) lets users query recommendations by client ID.
+1. **Data preprocessing** – aggregates raw airline booking data into customer profiles and augments with synthetic customer IDs.
+2. **Season prediction** – a trained scikit‑learn classifier predicts the most likely travel season for each customer based on behavioral and demographic features.
+3. **Association rule mining** – uses the Apriori algorithm to identify frequently co-occurring travel destinations and build association rules with high confidence.
+4. **Recommendation engine** – applies association rules to suggest the next travel destination for each customer based on their past preferences and travel season.
+5. **Interactive Streamlit UI** – allows users to query recommendations by client ID and view model performance metrics.
 
-The code is written in Python and uses common data‑science libraries (pandas, numpy, scikit‑learn, joblib) and Streamlit for the front‑end.
+Built with Python, pandas, scikit-learn, MLxtend, joblib, and Streamlit.
 
 ---
 
 ## Directory Structure
 ```
 Smart Travel Recommendation System/
-├─ .git/                     # Git repository metadata
-├─ .gitignore                # Ignore patterns for Python and notebooks
-├─ app.py                    # Streamlit entry point
-├─ artifact/                 # Serialized model and preprocessing artifacts
-│   ├─ travel_model.pkl
-│   ├─ feature_preprocessor.pkl
-│   └─ target_label.pkl
-├─ Notebooks/                # Jupyter notebooks for exploration
-│   ├─ Apriori Algorithm.ipynb
-│   └─ Travel Period Prediction.ipynb
-├─ src/                      # Core source code
-│   ├─ dummy_users.py        # Generates synthetic customer IDs
-│   ├─ predictor.py          # Loads model & makes season predictions
-│   └─ recommendation_engine.py # Applies Apriori rules to suggest destinations
-├─ Travel Agency/            # CSV/JSON data used by the pipeline
-│   ├─ Main_data.csv
-│   ├─ Recommendation data.csv
+├─ app.py                    # Streamlit web UI (recommendation system & model performance)
+├─ README.md                 # This file
+├─ artifact/                 # Serialized ML models and preprocessors
+│   ├─ travel_model.pkl      # Trained season prediction classifier
+│   ├─ feature_preprocessor.pkl # Feature encoder/scaler
+│   └─ target_label.pkl      # Label encoder
+├─ Notebooks/                # Jupyter notebooks for model development
+│   ├─ Apriori Algorithm.ipynb        # Association rule mining exploration
+│   └─ Travel Period Prediction.ipynb # Season prediction model training
+├─ src/                      # Core pipeline modules
+│   ├─ main.py               # Pipeline orchestrator
+│   ├─ dummy_users.py        # Aggregates booking data by customer ID
+│   ├─ predictor.py          # Season prediction on customer profiles
+│   ├─ association.py        # Apriori algorithm for mining association rules
+│   └─ recommendation_engine.py # Matches customers to rules & generates recommendations
+├─ Travel Agency/            # Data files (input & output)
+│   ├─ cleaned_data.csv      # Input: cleaned booking records
+│   ├─ season_destination_lookup.csv # Seasonal destination reference
 │   ├─ airlines_lookup.csv
 │   ├─ airports_lookup.csv
-│   ├─ bookings.csv
-│   ├─ cleaned_data.csv
-│   ├─ cleaned_data_with_users.csv
 │   ├─ passengers.csv
+│   ├─ bookings.csv
 │   ├─ payments.csv
-│   ├─ recommendations.json
-│   └─ segments.csv
-├─ README.md                 # **This file**
-└─ .ipynb_checkpoints/      # Notebook checkpoint files (auto‑generated)
+│   ├─ segments.csv
+│   ├─ recommendations.json  # Output: customer-to-destination recommendations
+│   ├─ predict.npy           # Predicted season labels (for model evaluation)
+│   └─ true.npy              # True season labels (for model evaluation)
+└─ SQLQuery1.sql             # SQL queries for data extraction
 ```
 
 ---
@@ -64,64 +65,142 @@ Smart Travel Recommendation System/
    ```
    If a `requirements.txt` is not present, install the core dependencies manually:
    ```
-   pip install pandas numpy scikit-learn joblib streamlit
+   pip install pandas numpy scikit-learn joblib streamlit mlxtend
    ```
 
 ---
 
-## Data Preparation
-The `Travel Agency` folder already contains cleaned CSV files. If you wish to rebuild the intermediate files:
-1. Run `src/dummy_users.py` to add a synthetic `customer_id` column to `cleaned_data.csv` and produce `cleaned_data_with_users.csv`.
-2. Ensure the JSON file `recommendations.json` is present; it stores the Apriori association rules used by the recommendation engine.
+## How It Works
+
+### Pipeline Stages
+
+1. **Data Aggregation** (`dummy_users.py`)
+   - Aggregates individual flight bookings into customer-level profiles
+   - Groups numerical features (flight duration, cost, etc.) by mean
+   - Groups categorical features (airline, cabin, city, etc.) by mode
+   - Creates synthetic customer IDs to organize the booking data
+
+2. **Season Prediction** (`predictor.py`)
+   - Loads pre-trained scikit-learn classification model from `artifact/`
+   - Applies feature preprocessing to customer profiles
+   - Predicts travel season (e.g., summer, winter) for each customer
+   - Outputs: predicted season label per customer
+
+3. **Association Rule Mining** (`association.py`)
+   - Groups destinations by predicted season and departure city
+   - Uses MLxtend's Apriori algorithm to find frequent destination combinations
+   - Generates association rules with high confidence (>0.69) using support and lift metrics
+   - Creates rules like: "Customers who travel to City A in summer often also travel to City B"
+
+4. **Recommendation Generation** (`recommendation_engine.py`)
+   - Matches each customer's previous destination against association rules
+   - Applies learned rules to suggest the next travel destination
+   - Outputs: `recommendations.json` containing antecedents, consequents, and confidence scores for each customer
+
+---
+
+## Running the Pipeline
+
+Execute the full recommendation pipeline:
+```bash
+python src/main.py
+```
+
+This will:
+1. Load cleaned booking data from `Travel Agency/cleaned_data.csv`
+2. Aggregate bookings into customer profiles
+3. Predict travel seasons for each customer
+4. Mine association rules from destination patterns
+5. Generate recommendations and save to `Travel Agency/recommendations.json`
+
+---
+
+## Running the Streamlit Web UI
+
+Launch the interactive Streamlit application:
+```bash
+streamlit run app.py
+```
+
+### Features
+
+**Recommendation System Tab:**
+- Enter a customer ID to view their travel history and personalized destination recommendation
+- Displays the customer's most frequently visited destination
+- Shows the recommended next destination based on association rules
+- Displays confidence score of the recommendation
+
+**Model Performance Tab:**
+- Confusion matrix showing season prediction accuracy
+- Classification report with precision, recall, and F1-scores
+- Association rule statistics and data
 
 ---
 
 ## Model Training (Optional)
-The pre‑trained model and preprocessors are stored in the `artifact` directory. To retrain:
-1. Prepare a training dataset (`cleaned_data_with_users.csv`).
-2. Use scikit‑learn pipelines to fit a classifier that predicts the travel season.
-3. Serialize the model and preprocessing objects with `joblib.dump` and place them in the `artifact` folder.
 
----
+Pre-trained models are stored in `artifact/`. To retrain:
+1. Prepare customer profile dataset with season labels
+2. Use scikit-learn pipelines to train a multi-class classifier
+3. Serialize the model and preprocessor with `joblib.dump()`
+4. Update files in the `artifact/` folder
 
-## Running the Streamlit Application
-The UI lets a user enter a client ID and view the most‑visited destination together with the next recommendation.
-```bash
-streamlit run app.py
-```
-Open the displayed localhost URL in a browser. Use the number input to select a client ID and click **Recommendation**.
+Refer to notebooks in `Notebooks/` for training examples.
 
 ---
 
 ## Generating Recommendations Programmatically
+
 You can invoke the recommendation pipeline directly from Python:
 ```python
 from src.recommendation_engine import recommendation_system
+from src.predictor import predict
+from src.association import associate
+from src.dummy_users import users
 import pandas as pd
 
-# Load data
-df = pd.read_csv('Travel Agency/cleaned_data_with_users.csv')
-rec_data = pd.read_csv('Travel Agency/Recommendation data.csv')
+# Load and preprocess data
+df = pd.read_csv('Travel Agency/cleaned_data.csv')
+cleaned_data = users(df, unique_ratio=0.35)
 
-# Predict season and get recommendations
-from src.predictor import predict
-season_predictions = predict(df)
-recommendations = recommendation_system(season_predictions, rec_data)
+# Predict seasons
+predict_data = predict(cleaned_data)
+
+# Mine association rules
+ass_data = associate(predict_data)
+
+# Generate and save recommendations
+recommendation_system(predict_data, ass_data)
 ```
-The resulting dictionary is saved to `Travel Agency/recommendations.json` by default.
+
+The resulting recommendations are saved to `Travel Agency/recommendations.json`.
+
+---
+
+## Technologies Used
+
+- **Python 3.x** – Core language
+- **pandas** – Data manipulation and aggregation
+- **numpy** – Numerical computations
+- **scikit-learn** – Machine learning classification
+- **MLxtend** – Apriori algorithm and association rules
+- **joblib** – Model serialization
+- **Streamlit** – Interactive web UI
 
 ---
 
 ## Contributing
+
 Contributions are welcome. Please follow these steps:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit your changes with clear messages.
-4. Open a pull request against the `main` branch.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes with clear messages
+4. Open a pull request against the `main` branch
 
 Make sure any new code adheres to the existing style and includes appropriate documentation.
 
 ---
 
 ## License
+
 This project is released under the MIT License. See the `LICENSE` file for details.

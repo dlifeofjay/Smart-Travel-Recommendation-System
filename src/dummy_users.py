@@ -1,21 +1,27 @@
-import random
-import os
 import pandas as pd
 import numpy as np
 
 df = pd.read_csv(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\cleaned_data.csv")
 
-# Create dummy customer id
-def users(df):
+def users(df, unique_ratio=0.4):
+    n_rows = len(df)
+    
+    # Number of unique customers
+    n_unique = int(n_rows * unique_ratio)
+    n_unique = max(50, min(n_unique, n_rows)) 
+    
+    print(f"Total rows: {n_rows}")
+    print(f"Unique customers (1 to {n_unique}): {n_unique}")
+    
+    customer_ids = np.random.choice(
+        a=np.arange(1, n_unique + 1), 
+        size=n_rows, 
+        replace=True                   
+    )
+    
+    df["customer_id"] = customer_ids
 
-    # Assumes we have 40% of total rows have unique customers to prompt repeat use of services
-    length = int(len(df) * 0.4)
-    df["customer_id"] = np.random.randint(1, length, size=len(df))
-    return df, length
+    print("Created dummy users")
+    
+    return df
 
-df, length = users(df)
-print(df.head())
-print(length)
-print(df["customer_id"].nunique())
-
-df.to_csv(r"C:\Users\USER\Documents\MY PORTFOLIO\Smart Travel Recommendation System\Travel Agency\cleaned_data_with_users.csv", index=False)

@@ -76,8 +76,11 @@ def predict(df):
     
     # Filter by current season
     result = X[X["predicted_season"] == current_season].copy()
+
+    print("Predictions made and saved")
     
     print(f"Current Season: {current_season}")
     print(f"Total recommendations: {len(result)}")
     
     return result
+
