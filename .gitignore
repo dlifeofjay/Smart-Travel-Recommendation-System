@@ -14,4 +14,11 @@ __pycache__/
 /Lib/
 /Scripts/
 
-
+# Virtual environment
+venv/
+# Additional ignored directories
+lib/
+site-packages/
+# Additional ignored files
+.gitattributes
+pyvenv/
